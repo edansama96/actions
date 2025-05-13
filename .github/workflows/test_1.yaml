@@ -10,8 +10,17 @@ jobs:
      runs-on: ubuntu-latest
 
      steps: 
-     - name: Hola Mundo
-       run: echo "Hola Mundo"
+      - name: Hola Mundo
+        uses: echo "Hola Mundo"
+
+      - name: touch file
+        uses: touch hola.txt
+
+      - name: Set text
+        uses: echo "Hola Mundo" >> hola.txt 
+
+      - name: Read file
+        uses: cat hola.txt
 
   other:
     runs-on: ubuntu-latest
