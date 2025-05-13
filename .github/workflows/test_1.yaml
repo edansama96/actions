@@ -1,0 +1,14 @@
+# Nombre representa el nombre del flujo de trabajo o workflow
+name: Hola Mundo
+
+#Indica el evento que activa el flujo de trabajo
+on: [push]
+
+# Jobs representa una colección de trabajos que se ejecutan en paralelo o en secuencia
+jobs: 
+  hola: 
+     runs-on: ubuntu-latest
+
+     steps: 
+     - name: Hola Mundo
+       run: echo "Hola Mundo"
