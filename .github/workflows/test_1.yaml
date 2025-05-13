@@ -2,7 +2,15 @@
 name: Hola Mundo
 
 #Indica el evento que activa el flujo de trabajo
-on: [push, pull_request]
+#uso directo de los disparadores [push, pull_request]
+on: 
+  push:
+   branches: 
+      - main
+  pull_request:
+    branches: 
+        - main
+ 
 
 # Jobs representa una colección de trabajos que se ejecutan en paralelo o en secuencia
 jobs: 
