@@ -17,4 +17,4 @@ jobs:
       
     steps:
       - name: VariableEn
-        run: echo "Valor: $MY_ENV_VAR"
+        run: echo "Valor $MY_ENV_VAR"
