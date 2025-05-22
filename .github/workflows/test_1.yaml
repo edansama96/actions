@@ -3,13 +3,13 @@ name: Hola Mundo
 
 # Desactivado temporalmente: solo se puede ejecutar manualmente desde GitHub UI
 on:
-  push:
-   branches: 
-     - main
-  pull_request:
-   branches: 
-        - main
- # workflow_dispatch:
+  #push:
+   #branches: 
+   #  - main
+  #pull_request:
+  # branches: 
+   #     - main
+  workflow_dispatch:
 
 # Jobs representa una colección de trabajos que se ejecutan en paralelo o en secuencia
 jobs: 
@@ -43,6 +43,21 @@ jobs:
         # instalación de node
       - name: Setup Node.js environment
         uses: actions/setup-node@v4.4.0
+        #uso del with para indicar la versión de node o manejo de parametros
+        with: 
+          node-version: latest
+          
       # Verificación de la versión de node
       - name: node version
         run: node -v
+      #uso de PHP
+      - name: PHP
+        # setup de PHP
+        uses: shivammathur/setup-php@v4.2.2
+        # manejo de la versión de PHP
+        with: 
+          php-version: '8.0'
+      # Verificación de la versión de PHP
+      - name : PHP version
+        run: php --version
+          
