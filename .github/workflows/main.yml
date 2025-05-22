@@ -1,7 +1,9 @@
 # Proceso de ejecución de comandos
 name: Test
 
-on: [push]
+on:
+ workflow_dispatch: 
+#[push]
 #Prueba de ejecución de comandos
 jobs:
   test-build:

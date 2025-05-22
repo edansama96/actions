@@ -3,7 +3,13 @@ name: Hola Mundo
 
 # Desactivado temporalmente: solo se puede ejecutar manualmente desde GitHub UI
 on:
-  workflow_dispatch:
+  push:
+   branches: 
+     - main
+  pull_request:
+   branches: 
+        - main
+ # workflow_dispatch:
 
 # Jobs representa una colección de trabajos que se ejecutan en paralelo o en secuencia
 jobs: 
@@ -27,8 +33,16 @@ jobs:
     runs-on: ubuntu-latest
     needs: [hola]
     steps: 
+    #verifica la conexión al repositorio
       - name: Checkout
         uses: actions/checkout@v4.2.2
-
+      #ls -al se ejecuta en la carpeta del repositorio para pode
+      #r ver los archivos que se encuentran en el repositorio
       - name: LS
         run: ls -al
+        # instalación de node
+      - name: Setup Node.js environment
+        uses: actions/setup-node@v4.4.0
+      # Verificación de la versión de node
+      - name: node version
+        run: node -v
