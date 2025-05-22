@@ -2,8 +2,8 @@
 name: Test
 
 on:
- workflow_dispatch: 
-#[push]
+ #workflow_dispatch: 
+[push]
 #Prueba de ejecución de comandos
 jobs:
   test-build:
@@ -13,6 +13,4 @@ jobs:
         uses: actions/checkout@v4.2.2
       
       - name: ls
-        run: |
-          chmod +x script.sh
-          ./script.sh
+        uses: ./.github/actions/my-action

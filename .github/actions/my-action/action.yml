@@ -1,0 +1,11 @@
+#Creación de una action propia
+name: "my action"
+description: "Test my action"
+runs:
+    #COMPOSITE: permite agrupar varios pasos en una sola acción los cuales son comunes
+  using: "composite"
+
+  steps:
+    - name: "Hola Mundo"
+      run: echo "Hola Mundo"
+      shell: bash
