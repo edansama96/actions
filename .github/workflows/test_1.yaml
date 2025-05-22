@@ -11,15 +11,10 @@ jobs:
   stay-hello: 
     runs-on: ubuntu-latest
 
-    services:
-      mysql:
-        image: mysql:5.7
-        env:
-          MYSQL_ROOT_PASSWORD: example
-        ports:
-          - 3306:3306
+    # Manejo de variables de entorno a nivel job
+    env:
+      MY_ENV_VAR: "Mi variable de entorno"
+      
     steps:
-      - name: Test
-        run: ls      
-         
-   
+      - name: VariableEn
+        run: echo "Valor: $MY_ENV_VAR"
