@@ -1,41 +1,41 @@
 # Nombre representa el nombre del flujo de trabajo o workflow
-name: Hola Mundo
+#name: Hola Mundo
 
 #Indica el evento que activa el flujo de trabajo
 #uso directo de los disparadores [push, pull_request]
-on: 
-  push:
-   branches: 
-      - main
-  pull_request:
-    branches: 
-        - main
+#on: 
+ # push:
+  # branches: 
+   #   - main
+ # pull_request:
+  #  branches: 
+   #     - main
  
 
 # Jobs representa una colección de trabajos que se ejecutan en paralelo o en secuencia
-jobs: 
-  hola: 
-     runs-on: ubuntu-latest
+#jobs: 
+ # hola: 
+  #   runs-on: ubuntu-latest
 
-     steps: 
-      - name: Hola Mundo
-        run: echo "Hola Mundo"
+#     steps: 
+ #     - name: Hola Mundo
+  #      run: echo "Hola Mundo"
 
-      - name: touch file
-        run: touch hola.txt
+   #   - name: touch file
+    #    run: touch hola.txt
 
-      - name: Set text
-        run: echo "Hola Mundo" >> hola.txt 
+     # - name: Set text
+      #  run: echo "Hola Mundo" >> hola.txt 
 
-      - name: Read file
-        run: cat hola.txt
+     # - name: Read file
+     #   run: cat hola.txt
 
-  other:
-    runs-on: ubuntu-latest
-    needs: [hola]
-    steps: 
-      - name: Checkout
-        uses: actions/checkout@v4.2.2
+ # other:
+  #  runs-on: ubuntu-latest
+  #  needs: [hola]
+   # steps: 
+     # - name: Checkout
+     #   uses: actions/checkout@v4.2.2
 
-      - name: LS
-        run: ls -al
+     # - name: LS
+     #   run: ls -al
