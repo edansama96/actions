@@ -1,0 +1,11 @@
+# Proceso de ejecución de comandos
+name: Test
+
+on: [push]
+#Prueba de ejecución de comandos
+jobs:
+  test-build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: ls
+        run: ls -la
